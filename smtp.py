@@ -7,6 +7,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+# Method to preconfigure smtp befor sending a message
 class Smtp():
   def __init__(self, server, port = 25):
     self.server = server
@@ -46,6 +47,7 @@ class Smtp():
     server.close()
     return True
 
+# Log provides message to screen
 def logToScreen(severity, msg):
   if (len(locals()) < 2):
     print("ERROR: Function logToScreen must be called with at least two arguments (1: Severity, 2-*: Message)")
