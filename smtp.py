@@ -13,27 +13,35 @@ class Smtp():
     self.server = server
     self.port = port
 
+  # sender setter
   def set_sender(self, sender):
     self.sender = sender
 
+  # recipients setter
   def set_recipients(self, recipients):
     self.recipients = recipients
 
+  # servername setter
   def set_server(self, server):
     self.server = server
 
+  # port setter
   def set_port(self, port):
     self.port = port
 
+  # subject setter
   def set_subject(self, subject):
     self.subject = subject
 
+  # getter for sender
   def get_sender(self):
     return self.sender
 
+  # getter for recipients
   def get_recipients(self):
     return self.recipients
 
+  # method sends email
   def send_email(self, body):
     msg = MIMEMultipart()
     msg['Subject'] = self.subject
@@ -47,7 +55,7 @@ class Smtp():
     server.close()
     return True
 
-  # Log provides message to screen
+  # method provides message to screen
   def logToScreen(severity, msg):
     if (len(locals()) < 2):
       print("ERROR: Function logToScreen must be called with at least two arguments (1: Severity, 2-*: Message)")
