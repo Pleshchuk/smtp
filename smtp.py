@@ -40,6 +40,18 @@ class Smtp():
     msg['To'] = self.recipients
     msg.attach(MIMEText(body, 'plain', 'utf-8'))
     server = smtplib.SMTP(self.server, self.port)
+    logToScreen("[INFO]", "Sending email to %s" % self.recipients)
     server.sendmail(self.sender, self.recipients.split(','), msg.as_string())
+    logToScreen("[INFO]", "Email was sent successfully")
     server.close()
     return True
+
+def logToScreen(severity, msg):
+  if (len(locals()) < 2):
+    print("ERROR: Function logToScreen must be called with at least two arguments (1: Severity, 2-*: Message)")
+    exit(12)
+  else:
+    TS = generateTimestamp()
+    string = ("%s: %s %s" % (TS, severity, msg))
+    print(string)
+    return string
