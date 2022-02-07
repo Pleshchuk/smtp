@@ -56,7 +56,7 @@ class Smtp():
     return True
 
   # method provides message to screen
-  def logToScreen(severity, msg):
+  def logToScreen(self, severity, msg):
     if (len(locals()) < 2):
       print("ERROR: Function logToScreen must be called with at least two arguments (1: Severity, 2-*: Message)")
       exit(12)
