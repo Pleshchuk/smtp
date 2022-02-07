@@ -1,8 +1,8 @@
 # SMTP client python library
-In this repository you can find SMTP client python library which simplify usage of python smtplib library
+In this repository, you can find the SMTP client python library which simplifies the usage of the python smtplib library
 
 # Usage
-To use SMTP python clien library just copy the file smtp.py into directory with your program and import it from there
+To use SMTP python client library just copy the file smtp.py into directory with your program and import it from there
 Just use the next syntax for that
 ```
 from smtp import *
@@ -13,7 +13,7 @@ After that you can define your method by using
 smtp = Smtp(<server_name>)
 ```
 
-There are the next setters and getters to use
+There are the next setters and getters which you can use
 
 ```smtp.set_sender(<sender_name>)``` - to define sender name
 
